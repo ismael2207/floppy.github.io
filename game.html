@@ -1,0 +1,589 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gm="http://www.gmail.org/1999/gmail"
+      xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Play Flappy Chick - Mad Games</title>
+<meta name="description" content="">
+
+<meta property="og:site_name" content="Flappy Chick" />
+<meta property="og:title" content="Flappy Chick" />
+<meta property="og:type" content="game" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://apps.facebook.com/floppybird_/?from=like" />
+<meta property="og:image" content="" />
+<meta property="fb:app_id" content="531844393535755" />
+<meta property="fb:admins" content="100000050394630" />
+
+<link rel="stylesheet" type="text/css" href="http://chri.bl.ee/css/ply.css"/>
+<link rel="stylesheet" type="text/css" href="http://chri.bl.ee/css/ply2.css"/>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/lib/jquerytools/1.2.7/full/jquery.tools.min.js?v8"></script>
+<style>
+</style>
+<script>
+function onReady(cb) {
+    if (typeof mg_ready != 'undefined' && mg_ready == true)
+        return cb.call();
+    setTimeout(function() {onReady(cb);}, 160);
+}
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+
+<div id="height_setter" style="padding-bottom: 100px">
+<a id="logo" name="logo" style="display:none; height:1px; width:1px;"><!--placeholder for scrollIntoView--></a>
+<a id="hd" name="hd"></a>
+
+<div id="wrapper">
+        <div id="mg_header">
+        <div id="mg_logo">
+            <img src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S0022519310000160-si0083.gif" />
+        </div>
+        <div id="fb-login">
+            <div id="status">
+                   
+                    <div id="auth-box">
+                    <a href="#" onclick="fblogin(); return false;"><img src="https://madgamesstatic.r.worldssl.net/static/fb/images/fbbutton.png?v8" /></a>
+                    </div>
+                            </div>
+        </div>
+    </div>
+                <div id="content_wrap">
+    <div id="content" class="clearfix">
+        <a name="gh"></a>
+                <style>
+            #inner_left_ad {
+                position: absolute;
+                left: -210px;
+                width: 180px;
+            }
+            #inner_left_ad .side-ad-placement {
+                text-align: right;
+                margin-top: 56px !important;
+            }
+            #content{
+                position:relative;
+            }
+            
+            @media screen and (max-width: 1256px) {
+               #content_wrap {
+                   padding-left: 190px;
+               }
+            }
+            
+            @media screen and (max-width: 1000px) {
+                #inner_left_ad{
+                    display: none;
+                }
+                #content_wrap {
+                    padding-left: 0px;
+                }
+            }            
+        </style>
+            	<div id="game_wrapper" class="clearfix">
+            <div id="game_dashboard" class="clearfix">
+			<div class="like-container">
+<div id="user_currency">
+<fb:login-button show-faces="false" width="100" max-rows="1"></fb:login-button>
+                </div>
+				<fb:like href="https://www.facebook.com/IsmaelEdition" show_faces="false" width="450" send="false" ref="game_like"></fb:like>
+
+                                    </div>
+									<div class="scoreboard-options">
+                    <a href="" id="challenge" class="button">Challenge Friends</a>
+                </div>
+                                            </div>
+            <div id="game_column">
+                                
+                <style type="text/css">
+#game_container {position: relative;}
+#game_vis_ctrl {position: relative;}
+#skip_ad {
+    display: none;
+    background: #222;
+    padding: 6px 0 8px;
+    font-size: 13px;
+    color: #ddd;
+}
+#skip_ad .text {
+    display: inline;
+}
+#skip_ad_link {
+    color: orange;
+    display: none;
+}
+#skip_ad_timer {
+    font-weight: bold;
+}
+#game_loading_indicator {position: absolute;z-index: -1;top: 0;width: 100%;height: 250px;border-radius: 5px;background: #fff url(https://madgamesstatic.r.worldssl.net/static/fb/images/loading-indicator-2.gif?v8) center center no-repeat;}
+#game_loading_indicator .text {text-align: center;font-weight: bold;margin-top: 75px;color: #555;font-size: 11pt;}
+#game {width: 610px; height: 650px;}
+#tabs_wrapper {width: 610px; height: 0; position: relative; display: block; margin: auto;}
+#tabs_wrapper ul {display: block; position: absolute; left: -28px; top: 10px; z-index: 10;}
+#tabs_wrapper li {display: block; width: 28px; cursor: pointer;}
+#tabs_wrapper img {width: 100%;}
+</style>
+<div id="game_container" align="center">
+    <div id="game_vis_ctrl">
+        <div id="game_loading_indicator">
+            <div class="text">Your game is loading...</div>
+        </div>
+                    
+                        <div id="tabs_wrapper">
+                <ul>
+                    <li tid="0" class="rewards"><img src="https://madgamesstatic.r.worldssl.net/static/fb/images/free-coins-tab.gif?v8" /></li>
+                </ul>
+            </div>
+                        <div id="game"></div>
+            
+            </div>
+    </div>                
+                            </div>
+            <div id="scoreboard_column" >
+                <div id="scoreboard" class="">
+                    <h2>Scoreboard</h2>
+                </div>
+            </div>
+            <div id="buy-currency" class="dialog">
+    <h1>Get More Coins</h1>
+    <h2>Coins allow you to buy helpful power-ups in the game!</h2>
+    <div class="content clearfix">
+        <div class="item-selector clearfix">
+                        <div item-id="11" class="currency-item" id="currency-item-11">
+                <div class="img">
+                    <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/100-small.png?v8" />
+                </div>
+                <div class="name">
+                    100 Coins                </div>
+                <div class="extra">
+                                    </div>
+                <div class="price">
+                    1 USD
+                </div>
+            </div>
+                        <div item-id="12" class="currency-item" id="currency-item-12">
+                <div class="img">
+                    <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/400-small.png?v8" />
+                </div>
+                <div class="name">
+                    400 Coins                </div>
+                <div class="extra">
+                                        (100 Extra)
+                                    </div>
+                <div class="price">
+                    3 USD
+                </div>
+            </div>
+                        <div item-id="13" class="currency-item" id="currency-item-13">
+                <div class="img">
+                    <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/800-small.png?v8" />
+                </div>
+                <div class="name">
+                    800 Coins                </div>
+                <div class="extra">
+                                        (300 Extra)
+                                    </div>
+                <div class="price">
+                    5 USD
+                </div>
+            </div>
+                        <div item-id="14" class="currency-item" id="currency-item-14">
+                <div class="img">
+                    <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/1800-small.png?v8" />
+                </div>
+                <div class="name">
+                    1800 Coins                </div>
+                <div class="extra">
+                                        (800 Extra)
+                                    </div>
+                <div class="price">
+                    10 USD
+                </div>
+            </div>
+                        <div item-id="15" class="currency-item" id="currency-item-15">
+                <div class="img">
+                    <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/5000-small.png?v8" />
+                </div>
+                <div class="name">
+                    5000 Coins                </div>
+                <div class="extra">
+                                        (2500 Extra)
+                                    </div>
+                <div class="price">
+                    25 USD
+                </div>
+            </div>
+                    </div>
+    </div>
+    <div class="buttons" align="center">
+        <a class="action-btn button">Buy Coins</a>
+    </div>
+</div>
+
+            <div id="invite-dialog" class="dialog">
+    <h1>Add Friends</h1>
+    <h2></h2>
+    <div class="content clearfix">
+        <div id="inv-fs"></div>
+    </div>
+</div>
+        </div>
+        <div class="game-cols clearfix">
+        	<div class="main_col" style="background: white;">
+            </div>
+            <div class="side_col" style="background: white;">
+            </div>
+        </div>
+    </div>
+</div>
+
+	<div id="game-result" class="overlay_wrap" style="display: none;">
+    <div id="game-result-inner" class="overlay">
+    </div>
+</div>
+<div id="currency-dialog" class="overlay_wrap" style="display: none;">
+    <div id="currency-dialog-inner" class="overlay">
+    </div>
+</div>
+<div id="game-result-2" class="overlay" style="display:none">
+    <h2>Game Result</h2>
+    <div class="content">
+        <div class="score-wrap">Your score: <span class="score-fmt"><span class="score"></span>&nbsp;points</span><span id="game-result-share-link"> (<a href="#" onclick="showShareScoreDialog(); return false;">Share</a>)</span></div>
+        <div class="publish-success">Your score has been published!</div>
+        <div class="buttons buttons-2">
+            <div><!--btn btn-l btn-dlg-->
+                <label class="uiButton uiButtonLarge uiButtonConfirm">
+                    <input type="button" value="Challenge Friends" onclick="showScoreFlowChallengeFriendsBox();" />
+                </label>
+            </div>
+            <div>
+                <label class="uiButton uiButtonLarge uiButtonConfirm">
+                    <input type="button" value="Play Again" onclick="playAgain();" />
+                </label>
+            </div>
+            <div>
+                <label class="uiButton uiButtonLarge uiButtonConfirm">
+                    <input type="button" value="Play More Games" onclick="redirectTo(urlOf(''));" />
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="challenge-box" class="overlay_wrap" style="display: none;">
+    <div id="game-result-inner" class="overlay">
+        <h2><!--Challenge Your Friends!-->Play with Friends!</h2>
+        <div class="content">
+        	            <div class="buttons"><!--btn btn-l btn-dlg-->
+                <label class="uiButton uiButtonLarge uiButtonConfirm">
+                    <input type="button" value="Invite Friends :)" onclick="handleChallengeButton();" />
+                </label>
+                <!--btn btn-dlg btn-dlg-cancel-->
+                <label class="uiButton uiButtonLarge uiButtonCancel">
+                    <input type="button" value="Skip" onclick="closeChallengeDialog();" />
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="invite-dialog" class="dialog">
+    <h1>Add Friends</h1>
+    <h2></h2>
+    <div class="content clearfix">
+        <div id="inv-fs"></div>
+    </div>
+</div>
+<div id="footer">
+        <div class="inner clearfix">
+        <div class="copyright">
+            <a href="https://apps.facebook.com/floppybird_/" target="_blank">Floppy Bird</a> &copy; 2014        </div>
+        <div class="links">
+            <a href="https://www.madgam.es/fb/standalone/178/privacy?s=kslfbnmeo4ekv17kkn7ioet274">Privacy Policy</a>
+                        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+    var App = {
+        appId: '531844393535755',
+        appCanvas: 'floppybird_',
+        appName: 'Floppy Bird',
+        basePath: 'https://chriki1.site44.com/',
+        fbBasePath: 'https://apps.facebook.com/floppybird_/',
+        fbuid: '',
+        s: 'kslfbnmeo4ekv17kkn7ioet274',
+        pageHeight: -1,
+        pagePath: 'standalone/178/',
+        loginUrl: 'http://flappyb.96.lt/login.php',
+        loginScope: 'publish_actions',
+        logoutUrl: 'http://flappyb.96.lt/login.php',
+        hrefToCanvas: false,
+        skipLogin: false,
+        isCanvas: false,
+        config: {
+            userStateUpdateFirstInterval: 2000,
+            userStateUpdateInterval: 300000,
+            barGridGamesEnabled: false        },
+        logged: false,
+        user: {
+            id: "0",
+            firstname: "",
+            lastname: "",
+            picture: "",
+            accessToken: "",
+            friends: {
+                all: null,
+                installed: null            },
+            permissions: null        },
+        visitTime: new Date().getTime(),
+        outstandingRequests: 0,
+        showChallengeDlg: false,
+        showChallengeDlgPreGame: false,
+        showChallengeDlgPostGame: false,
+        friendsToInvite: [],
+        debug: true
+    };
+    
+    var Game = {
+        id: 279,
+        stln_gid: 178,        url: 'https://apps.facebook.com/floppybird_/',
+        name: 'Floppy Bird',
+        desc: '',
+        image: 'https://madgames.r.worldssl.net/thumbs/200x200/279-900.png',
+        width: 610,
+        height: 650,
+        api_type: 'main',
+        api_version: '2.1',
+        delay: 0,
+        post_alert: 0,
+        levels: {"5":{"id":"684","title":"5 Points","action":"reach","url":"https:\/\/www.apps.facebook.com\/floppybird_\/"},"1":{"id":"685","title":"1 Point","action":"reach","url":"https:\/\/www.apps.facebook.com\/floppybird_\/"},"2":{"id":"686","title":"2 Points","action":"reach","url":"https:\/\/www.apps.facebook.com\/floppybird_\/"},"3":{"id":"687","title":"3 Points","action":"reach","url":"https:\/\/www.apps.facebook.com\/floppybird_\/"},"4":{"id":"688","title":"4 Points","action":"reach","url":"https:\/\/www.apps.facebook.com\/floppybird_\/"}},
+        custom_actions: [],
+        achievements: {},
+        session_achiv: [],
+        gameID: 'flappy2',
+        mode: 'Leaderboard',
+        src: 'http://chri.bl.ee/index.swf',
+        leaderboard_enabled: true    };
+    
+        var Leaderboard = {
+        curMode: '',
+        show_share: 0    };
+    </script>
+
+<!-- Load JS API Handler File -->
+
+
+<script type="text/javascript">
+$(function() {
+    mg_ready = true;
+    
+    // api client
+    if (typeof MadGamesApi !== 'undefined') {
+        MadGamesApi.init('game_swf');
+    }
+
+    // game movie & features
+    loadGameSWF();
+    initGameFeatures();
+    
+        // game leaderbaord
+    loadLeaderboard();
+        
+    // load currency
+    currency.init();
+});
+
+// init facebook callback
+window.fbAsyncInit = function() {
+    initFacebook();
+};
+(function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+    <script src="https://madgamesstatic.r.worldssl.net/static/fb/js/api/2.1.js?v8"></script>
+
+
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/standalone.all.js?v8"></script>
+
+
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/scoreboard.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/currency.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/friend_selector.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/friend_requests.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/friend_help.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/dialog.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/gifting.js?v8"></script>
+<script src="https://madgamesstatic.r.worldssl.net/static/fb/js/lib/web_client.js?v8"></script>
+<script type="text/javascript">
+var start_time = new Date().getTime() / 1000;
+function time_elapsed(label) {
+    try{
+        if(console && console.log){
+            console.log("Time" + (label ? ' (' + label + ')' : '') + ': ' + (new Date().getTime() / 1000 - start_time));
+        }
+    }catch(e){} 
+}
+
+$(function(){
+    time_elapsed("JQuery Ready");
+    
+        
+    // invite dialog
+    time_elapsed("Before Invite Dialog");
+    
+    //$('body').append(friend_help_div);
+    friend_help_dialog = new Dialog({
+        show_mask: false,// TODO: switch
+        show_loading: false,// TODO: switch
+        append_to: '#game_wrapper',
+        content: function() {
+            return friend_help({
+                friends_list: App.user.friends.all,
+                send_btn: 'Send <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/100_coins_24.png?v8" />',
+                send_all_btn: 'Send All <img src="https://madgamesstatic.r.worldssl.net/static/fb/images/100_coins_24.png?v8" />',
+                classes: 'with-coin',
+                message: 'Help Your Friends',
+                cb: function() {
+                    friend_help_dialog.close.call(friend_help_dialog);
+                },
+                friend_requests_args: {
+                    friends: [],
+                    message:'Here is 100 coins for you!',
+                    data: 'gifts'
+                }
+            })
+         }
+    });
+    
+    friend_help_dialog.showed_init_invite = false;
+    friend_help_dialog.showed_init_invite_start_time = new Date().getTime();
+    friend_help_dialog.initInvite = function(){
+        if(!friend_help_dialog.showed_init_invite){
+            friend_help_dialog.showed_init_invite = true;
+            friend_help_dialog.show();
+            //trigger_event('invite_dialog', {type: 'add', priority: 90});
+        }
+    }
+    
+    invite_dialog = new Dialog({
+        show_mask: false,// TODO: switch
+        show_loading: false,// TODO: switch
+        content: function() {
+            div = $('#invite-dialog');
+            
+            // load friend selector
+            this.message = '';
+            this.data = '';
+            this.fs = new friend_selector({
+                FB: FB,
+                container: div.find('#inv-fs'),
+                filter: [],
+                access_token: App.user.accessToken,
+                onSubmit: function(uid, update) {
+                    var args = {
+                        friends: uid,
+                        message: invite_dialog.message,
+                        access_token: App.user.accessToken
+                    };
+                    friend_requests(args, update);
+                }
+            });
+            
+            return div;
+        }
+    });
+    
+    invite_dialog.showDialog = function(type, pri) {
+        console_log('type', type);
+        var beforeLoad;
+        if (type == 'add') {
+            beforeLoad = function() {
+                console_log("Filtered friends: ");
+                console_log(App.user.friends.installed.fbuids);
+                this.fs.updateFilteredFriends(App.user.friends.installed.fbuids, true);
+                this.message = 'Please join me in ' + Game.name;
+                this.data = 'add';
+                this.content.attr('class', 'dialog dialog-add');
+                this.content.find('h1').text("Add Your Friends");
+                this.content.find('h2').text("Add your friends and compete for higher scores!").show();
+                this.content.find('.fs-submit').text("Add Friends");
+                this.content.find('.fs-progress-bar-wrap').show();
+            }
+        }
+        else if (type == 'challenge') {
+            beforeLoad = function() {
+                this.fs.updateFilteredFriends([], true);
+                this.message = 'Please join me in ' + Game.name + '. See if you can beat my score!';
+                this.data = 'challenge';
+                this.content.attr('class', 'dialog dialog-challenge');
+                this.content.find('h1').text("Challenge Your Friends!");
+                this.content.find('h2').text("Compete with your friends for the highest score!").show();
+                this.content.find('.fs-submit').text("Send Requests");
+                this.content.find('.fs-progress-bar-wrap').hide();
+            }
+        }
+        else if (type == 'send_gifts') {
+            beforeLoad = function() {
+                console_log("sent", gifting.getSent(true));
+                this.fs.updateFilteredFriends(gifting.getSent(true), true);
+                this.message = 'Here are 100 coins for you!';
+                this.data = 'gifts';
+                this.content.attr('class', 'dialog dialog-gift');
+                this.content.find('h1').text("Your Friends Need You!");
+                this.content.find('h2').text("Help out your friends by sending them 100 Coins!").show();
+                this.content.find('.fs-submit').text("Send Coins");
+                this.content.find('.fs-progress-bar-wrap').hide();
+            }
+        }
+        
+        this.settings('onBeforeLoad', beforeLoad);
+        this.show(pri);
+    }
+    
+    invite_dialog.showed_init_invite = false;
+    invite_dialog.showed_init_invite_start_time = new Date().getTime();
+    invite_dialog.initInvite = function(){
+        if(!invite_dialog.showed_init_invite){
+            invite_dialog.showed_init_invite = true;
+            
+            //trigger_event('invite_dialog', {type: 'add', priority: 90});
+        }
+    }
+    
+    on_event('level_reached', function(arg) {
+        var show_after_secs = 60;
+        var time_length = (new Date().getTime() - invite_dialog.showed_init_invite_start_time)/1000;
+        if(Game.stln_gid == "142" && time_length > show_after_secs){
+            //invite_dialog.initInvite();
+            //friend_help_dialog.initInvite();
+        }
+    });
+    on_event('submit_score', function(arg) {
+       // invite_dialog.initInvite();
+       //friend_help_dialog.initInvite();
+    });
+    
+    on_event('invite_dialog', function(arg) {
+        if (typeof arg === 'object') {
+            var type = arg.type;
+            var priority = arg.priority ? arg.priority : undefined; 
+        } else {
+            var type = arg;
+            var priority = undefined;
+        }
+        
+        invite_dialog.showDialog(type, priority);
+    });
+        
+    time_elapsed("After Invite Dialog");
+    
+    Scores cannot be retrieved.
